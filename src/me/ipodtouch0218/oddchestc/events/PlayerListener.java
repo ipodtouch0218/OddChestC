@@ -26,6 +26,8 @@ public class PlayerListener implements Listener {
 					e.getPlayer().getInventory().addItem(chest.getRandomLoot().getItemStack());
 					if (e.getItem().getAmount() > 1) {
 						e.getItem().setAmount(e.getItem().getAmount() - 1);
+					} else {
+						e.getPlayer().getInventory().setItem(e.getPlayer().getInventory().getHeldItemSlot(), null);
 					}
 				}
 			}

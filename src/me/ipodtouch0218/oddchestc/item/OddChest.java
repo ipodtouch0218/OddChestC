@@ -6,7 +6,6 @@ import java.util.List;
 import me.ipodtouch0218.oddchestc.OddMain;
 import me.ipodtouch0218.oddchestc.util.Util;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -25,23 +24,20 @@ public class OddChest {
 		this.name = name;
 		
 		chance = config.getDouble(name + ".chance");
-		Bukkit.broadcastMessage(chance + "");
 		String[] splitStr = config.getString(name + ".itemstack").split(",");
 		ItemStack stack = new ItemStack(Material.getMaterial(splitStr[0]), 1, Short.parseShort(splitStr[2]));
 		ItemMeta im = stack.getItemMeta();
-		im.setDisplayName(splitStr[1]);
+		im.setDisplayName(ChatColor.translateAlternateColorCodes('&', splitStr[1]));
 		stack.setItemMeta(im);
 		this.stack = stack;
-		Bukkit.broadcastMessage(stack.toString());
 		
 		for (String str: config.getStringList(name + ".lootTable")) {
-			Bukkit.broadcastMessage(str);
 			if (str != null) {
 				String[] splitString = str.split(",");
 				ItemStack itemToAdd = new ItemStack(Material.getMaterial(splitString[0]), 1, Short.parseShort(splitString[2]));
 				ItemMeta itemmeta = itemToAdd.getItemMeta();
-				if (!(splitString[1].equals("null")))
-					im.setDisplayName(ChatColor.translateAlternateColorCodes('&', splitString[1]));
+				if (!(splitString[1].equals("")))
+					itemmeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', splitString[1]));
 				itemToAdd.setItemMeta(itemmeta);
 				lootTable.add(new Loot(itemToAdd, Double.parseDouble(splitString[3])));
 			}

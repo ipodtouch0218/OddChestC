@@ -1,6 +1,5 @@
 package me.ipodtouch0218.oddchestc.util;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -14,12 +13,9 @@ public class Util {
 
 	public static OddChest getRandomOddChest() {
 		int amount = config.getKeys(false).size();
-		Bukkit.broadcastMessage(config.getKeys(false).size() + "");
 		int randomInt = (int) (((Math.random())*amount)+1);
-		Bukkit.broadcastMessage(randomInt + "");
 		int iterations = 0;
 		for (String str : config.getKeys(false)) {
-			Bukkit.broadcastMessage(str);
 			iterations++;
 			if (iterations == randomInt) {
 				return new OddChest(str);

@@ -1,6 +1,6 @@
 main: me.ipodtouch0218.oddchestc.OddMain
 name: OddChestC
-version: 1.0-dev
+version: 1.1-for-OmegaRaids
 author: ipodtouch0218
 commands:
    oddchest:
