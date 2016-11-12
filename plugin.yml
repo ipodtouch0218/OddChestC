@@ -1,0 +1,9 @@
+main: me.ipodtouch0218.oddchestc.OddMain
+name: OddChestC
+version: 1.0-dev
+author: ipodtouch0218
+commands:
+   oddchest:
+      permission: oddchestc.command
+      description: Main OddChestC Command
+      usage: /<command> give <player> <chest> <amount>

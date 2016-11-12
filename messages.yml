@@ -1,0 +1,4 @@
+playerInvFull: "&c%player%'s inventory is full!"
+playerGivenItem: "&aGiven %amount% %item% to %player%!"
+givenItem: "&aYou have been given an Oddchest!"
+giveInvalidArgs: "&cInvalid Usage! &7/oddchest give <player> <chestname> <amount>"
