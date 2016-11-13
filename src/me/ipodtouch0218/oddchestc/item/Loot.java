@@ -5,9 +5,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class Loot extends ItemStack {
 
-	ItemStack lootStack;
-	String lootStackName;
-	double chance;
+	private ItemStack lootStack;
+	private String lootStackName;
+	private double chance;
 	
 	public Loot(ItemStack stack, double chance) {
 		this.lootStack = stack;

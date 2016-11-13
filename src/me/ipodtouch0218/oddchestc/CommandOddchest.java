@@ -15,7 +15,7 @@ import org.bukkit.ChatColor;
 
 public class CommandOddchest implements CommandExecutor {
 
-	FileConfiguration messages;
+	private FileConfiguration messages;
 	
 	public CommandOddchest(FileConfiguration cfg) {
 		messages = cfg;

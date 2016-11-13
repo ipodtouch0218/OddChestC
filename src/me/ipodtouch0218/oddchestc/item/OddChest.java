@@ -15,10 +15,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class OddChest {
 
 	static FileConfiguration config = OddMain.main;
-	Double chance;
-	String name;
-	ItemStack stack;
-	List<Loot> lootTable = new ArrayList<Loot>();
+	private Double chance;
+	private String name;
+	private ItemStack stack;
+	private List<Loot> lootTable = new ArrayList<Loot>();
 	
 	public OddChest(String name) {
 		this.name = name;

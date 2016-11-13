@@ -14,7 +14,7 @@ import me.ipodtouch0218.oddchestc.util.Util;
 
 public class EntityListener implements Listener {
 
-	FileConfiguration config;
+	private FileConfiguration config;
 	
 	public EntityListener(FileConfiguration fg) {
 		config = fg;

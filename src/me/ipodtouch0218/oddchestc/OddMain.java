@@ -11,11 +11,11 @@ public class OddMain extends JavaPlugin {
 	
 	public static FileConfiguration main;
 	
-	File messageFile = new File(getDataFolder() + "/messages.yml");
-	FileConfiguration messageConfig = YamlConfiguration.loadConfiguration(messageFile);
+	private File messageFile = new File(getDataFolder() + "/messages.yml");
+	private FileConfiguration messageConfig = YamlConfiguration.loadConfiguration(messageFile);
 	
-	File entityFile = new File(getDataFolder() + "/entities.yml");
-	FileConfiguration entityConfig = YamlConfiguration.loadConfiguration(entityFile);
+	private File entityFile = new File(getDataFolder() + "/entities.yml");
+	private FileConfiguration entityConfig = YamlConfiguration.loadConfiguration(entityFile);
 	
 	@Override
 	public void onEnable() {
@@ -24,7 +24,7 @@ public class OddMain extends JavaPlugin {
 		main = getConfig();
 		getCommand("oddchest").setExecutor(new CommandOddchest(messageConfig));
 		getServer().getPluginManager().registerEvents(new EntityListener(entityConfig), this);
-		getServer().getPluginManager().registerEvents(new PlayerListener(messageConfig), this);
+		getServer().getPluginManager().registerEvents(new PlayerListener(), this);
 	}
 	
 	@Override
