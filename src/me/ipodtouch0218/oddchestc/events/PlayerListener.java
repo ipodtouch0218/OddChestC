@@ -1,5 +1,6 @@
 package me.ipodtouch0218.oddchestc.events;
 
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -16,15 +17,18 @@ public class PlayerListener implements Listener {
 				e.setCancelled(true);
 				OddChest chest = OddChest.fromItemStack(e.getItem());
 				if (e.getPlayer().getInventory().firstEmpty() != -1) {
-					e.getPlayer().getInventory().addItem(chest.getRandomLoot().getItemStack());
-					if (e.getItem().getAmount() > 1) {
-						e.getItem().setAmount(e.getItem().getAmount() - 1);
+					if (!chest.commandMode()) {
+						e.getPlayer().getInventory().addItem(chest.getRandomLoot().getItemStack());
+						if (e.getItem().getAmount() > 1) {
+							e.getItem().setAmount(e.getItem().getAmount() - 1);
+						} else {
+							e.getPlayer().getInventory().setItem(e.getPlayer().getInventory().getHeldItemSlot(), null);
+						}
 					} else {
-						e.getPlayer().getInventory().setItem(e.getPlayer().getInventory().getHeldItemSlot(), null);
+						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), chest.getRandomCommand().getCommand());
 					}
 				}
 			}
 		}
 	}
-	
 }

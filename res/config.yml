@@ -1,11 +1,13 @@
 GoldOddChest:
-  itemstack: ENDER_CHEST,"&bLOLTEST",0
+  itemstack: ENDER_CHEST,"&6Golden Odd Chest",0
+  chance: 25.0
   lootTable:
   - GOLDEN_HELMET,&6Butter Helmet,12,50
   - GOLDEN_BOOTS,&eidk?,11,50 
   
 DiamondOddChest:
-  itemstack: DIAMOND_ORE,"&bDIAMOND_ODD_CHEST",0
+  itemstack: DIAMOND_BLOCK,"&bDiamond Odd Chest",0
+  chance: 10.0
   lootTable:
-  - DIAMOND,null,0,20
+  - DIAMOND,,0,20
   - COAL,"&8Almost A Diamond",0,80
